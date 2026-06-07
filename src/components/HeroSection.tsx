@@ -68,7 +68,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="lg:col-span-4 relative flex flex-col items-center lg:items-end"
         >
-          <div className="relative w-full max-w-[16rem] aspect-[4/5] bg-surface rounded-2xl border border-border flex items-center justify-center overflow-hidden">
+          <div className="relative w-full max-w-sm aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden">
             <Image src="/assets/Ace/PORTRAIT-02-NO_BG-v2.png" alt="Ace Philip Denulan" fill className="object-contain object-bottom" priority />
           </div>
 
