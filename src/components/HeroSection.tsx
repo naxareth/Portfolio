@@ -15,10 +15,16 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-8 flex flex-wrap gap-2"
           >
             <span className="text-xs uppercase tracking-widest text-muted border border-border px-3 py-1 rounded-full">
-              BSIT · System Development · Applied Analytics
+              BSIT
+            </span>
+            <span className="text-xs uppercase tracking-widest text-muted border border-border px-3 py-1 rounded-full">
+              System Development
+            </span>
+            <span className="text-xs uppercase tracking-widest text-muted border border-border px-3 py-1 rounded-full">
+              Applied Analytics
             </span>
           </motion.div>
 

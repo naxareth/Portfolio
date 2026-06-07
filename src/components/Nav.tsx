@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 export default function Nav() {
   const pathname = usePathname()
   const [isDark, setIsDark] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     // Check initial theme from document class
@@ -25,12 +26,13 @@ export default function Nav() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/50 border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="text-2xl font-serif">
           Ace.
         </Link>
 
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <Link href="/#skills" className={`${pathname === '/' ? 'text-foreground' : 'text-muted'} hover:text-foreground transition-colors`}>
             Skills
@@ -43,10 +45,10 @@ export default function Nav() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button 
             onClick={toggleTheme}
-            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-foreground hover:bg-surface transition-colors"
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-foreground hover:bg-surface transition-colors shrink-0"
             aria-label="Toggle theme"
           >
             {isDark ? (
@@ -58,12 +60,37 @@ export default function Nav() {
           
           <Link 
             href="/contact" 
-            className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="hidden sm:flex px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Let's talk
           </Link>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden w-10 h-10 flex items-center justify-center text-muted hover:text-foreground shrink-0"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Nav Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border px-6 py-4 flex flex-col gap-4 shadow-xl">
+          <Link href="/#skills" onClick={() => setIsMenuOpen(false)} className={`${pathname === '/' ? 'text-foreground' : 'text-muted'} text-lg font-medium`}>Skills</Link>
+          <Link href="/work" onClick={() => setIsMenuOpen(false)} className={`${pathname.startsWith('/work') ? 'text-foreground' : 'text-muted'} text-lg font-medium`}>Work</Link>
+          <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`${pathname === '/about' ? 'text-foreground' : 'text-muted'} text-lg font-medium`}>About</Link>
+          <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-foreground mt-2 border-t border-border pt-4">Let's talk</Link>
+        </div>
+      )}
     </header>
   )
 }
