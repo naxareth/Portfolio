@@ -75,7 +75,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none"></div>
     </Link>
   )
 }

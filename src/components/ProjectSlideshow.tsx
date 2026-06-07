@@ -61,7 +61,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
         </AnimatePresence>
 
         {/* Overlay gradient for caption */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none" />
 
         {/* Caption */}
         <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
