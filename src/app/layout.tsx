@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
+import GlobalLoadingScreen from "@/components/GlobalLoadingScreen";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +36,7 @@ export default function RootLayout({
       className={`${dmSerifDisplay.variable} ${dmSans.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        <GlobalLoadingScreen />
         {children}
       </body>
     </html>

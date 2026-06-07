@@ -69,7 +69,7 @@ export default function HeroSection() {
           className="lg:col-span-4 relative flex flex-col items-center lg:items-end"
         >
           <div className="relative w-full max-w-[16rem] aspect-[4/5] bg-surface rounded-2xl border border-border flex items-center justify-center overflow-hidden">
-            <Image src="/assets/Ace/PORTRAIT-02-NO_BG.png" alt="Ace Philip Denulan" fill className="object-contain object-bottom" />
+            <Image src="/assets/Ace/PORTRAIT-02-NO_BG-v2.png" alt="Ace Philip Denulan" fill className="object-contain object-bottom" priority />
             
             <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md border border-border px-3 py-2 rounded-full flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
