@@ -1,3 +1,8 @@
+export type ProjectGalleryImage = {
+  src: string;
+  alt: string;
+}
+
 export type Project = {
   slug: string
   title: string
@@ -14,7 +19,7 @@ export type Project = {
     stack?: string[]
     outcome?: string
     reflection?: string
-    gallery?: string[]
+    gallery?: ProjectGalleryImage[]
   }
 }
 
@@ -42,11 +47,11 @@ export const projects: Project[] = [
       outcome: "Published to VS Code Marketplace (v0.0.1, April 2026). Roadmap includes concept debt tracking, project ownership mapping, and reconstruction challenges.",
       reflection: "This project came directly from identifying a personal failure mode — building things without truly understanding them. Intellegode is an attempt to build a tool that forces the habit of understanding. The irony of building it while learning to code independently was not lost.",
       gallery: [
-        '/assets/Intellegode/SELECTCODE.png',
-        '/assets/Intellegode/QUESTION.png',
-        '/assets/Intellegode/HINTANDANSWER.png',
-        '/assets/Intellegode/SESSIONREVIEW.png',
-        '/assets/Intellegode/SESSIONDETAILS.png'
+        { src: '/assets/Intellegode/SELECTCODE.png', alt: 'Code Selection UI' },
+        { src: '/assets/Intellegode/QUESTION.png', alt: 'Comprehension Question Prompt' },
+        { src: '/assets/Intellegode/HINTANDANSWER.png', alt: 'Hint & Answer Interface' },
+        { src: '/assets/Intellegode/SESSIONREVIEW.png', alt: 'Session Review Dashboard' },
+        { src: '/assets/Intellegode/SESSIONDETAILS.png', alt: 'Detailed Session Analysis' }
       ]
     }
   },
@@ -62,11 +67,11 @@ export const projects: Project[] = [
     caseStudy: {
       stack: ['Next.js 14 App Router', 'TypeScript', 'Supabase', 'Prisma', 'Hardhat', 'Solidity', 'Polygon Amoy', 'Gemini 1.5 Flash', 'TailwindCSS', 'RainbowKit'],
       gallery: [
-        '/assets/VECTOR/LANDINGPAGE.png',
-        '/assets/VECTOR/CVR_SS.png',
-        '/assets/VECTOR/CAREER-ANALYTICS.png',
-        '/assets/VECTOR/RECOMMENDEDRESOURCES.png',
-        '/assets/VECTOR/AICHATBOT.png'
+        { src: '/assets/VECTOR/LANDINGPAGE.png', alt: 'Platform Landing Page' },
+        { src: '/assets/VECTOR/CVR_SS.png', alt: 'Resume Parsing & Skills Extraction' },
+        { src: '/assets/VECTOR/CAREER-ANALYTICS.png', alt: 'Career Analytics Dashboard' },
+        { src: '/assets/VECTOR/RECOMMENDEDRESOURCES.png', alt: 'AI Resource Recommendations' },
+        { src: '/assets/VECTOR/AICHATBOT.png', alt: 'Integrated Career AI Assistant' }
       ]
     }
   },
@@ -82,11 +87,11 @@ export const projects: Project[] = [
     caseStudy: {
       stack: ['Python (Django)', 'Dart (Flutter)', 'TypeScript (Next.js)', 'PostgreSQL', 'C++ (IoT scripts)'],
       gallery: [
-        '/assets/ORBIT/LOGIN_SS.png',
-        '/assets/ORBIT/DASHBOARD_SS.png',
-        '/assets/ORBIT/USAGE_SS.png',
-        '/assets/ORBIT/ORBIT_AI.jpg',
-        '/assets/ORBIT/DASHBOARD_MOBILE.jpg'
+        { src: '/assets/ORBIT/LOGIN_SS.png', alt: 'Secure Authentication Portal' },
+        { src: '/assets/ORBIT/DASHBOARD_SS.png', alt: 'System Dashboard Overview' },
+        { src: '/assets/ORBIT/USAGE_SS.png', alt: 'Energy Usage Tracking' },
+        { src: '/assets/ORBIT/ORBIT_AI.jpg', alt: 'Natural Language Data Queries' },
+        { src: '/assets/ORBIT/DASHBOARD_MOBILE.jpg', alt: 'Responsive Mobile Dashboard' }
       ]
     }
   },

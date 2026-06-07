@@ -4,15 +4,15 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import type { Project } from '@/lib/projects'
+import type { Project, ProjectGalleryImage } from '@/lib/projects'
 
 export default function CaseStudyCard({ project }: { project: Project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   // Use gallery if available and has items, otherwise fallback to thumbnail
-  const images = project.caseStudy?.gallery && project.caseStudy.gallery.length > 0 
+  const images: ProjectGalleryImage[] = project.caseStudy?.gallery && project.caseStudy.gallery.length > 0 
     ? project.caseStudy.gallery 
-    : (project.thumbnail ? [project.thumbnail] : [])
+    : (project.thumbnail ? [{ src: project.thumbnail, alt: project.title }] : [])
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -64,8 +64,8 @@ export default function CaseStudyCard({ project }: { project: Project }) {
               className="absolute inset-0"
             >
               <Image 
-                src={images[currentImageIndex]} 
-                alt={`${project.title} preview`} 
+                src={images[currentImageIndex].src} 
+                alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
                 className="object-cover"
                 priority={currentImageIndex === 0}

@@ -3,17 +3,9 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import type { ProjectGalleryImage } from '@/lib/projects'
 
-function formatImageName(url: string) {
-  const filename = url.split('/').pop()?.split('.')[0] || ''
-  return filename
-    .replace(/[-_]/g, ' ')
-    .replace(/\bSS\b/gi, 'Screenshot')
-    .toLowerCase()
-    .replace(/\b\w/g, c => c.toUpperCase())
-}
-
-export default function ProjectSlideshow({ images, altPrefix }: { images: string[], altPrefix: string }) {
+export default function ProjectSlideshow({ images, altPrefix }: { images: ProjectGalleryImage[], altPrefix: string }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
@@ -59,8 +51,8 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: string
             className="absolute inset-0"
           >
             <Image 
-              src={images[currentIndex]} 
-              alt={`${altPrefix} preview`} 
+              src={images[currentIndex].src} 
+              alt={`${altPrefix} - ${images[currentIndex].alt}`} 
               fill 
               className="object-cover"
               priority={currentIndex === 0}
@@ -74,7 +66,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: string
         {/* Caption */}
         <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
           <span className="text-sm font-mono bg-background/50 backdrop-blur-md px-3 py-1.5 rounded-md border border-border/50 text-foreground">
-            {formatImageName(images[currentIndex])}
+            {images[currentIndex].alt}
           </span>
         </div>
         
@@ -136,8 +128,8 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: string
                 onClick={(e) => e.stopPropagation()}
               >
                 <Image 
-                  src={images[currentIndex]} 
-                  alt={`${altPrefix} full size preview`} 
+                  src={images[currentIndex].src} 
+                  alt={`${altPrefix} - ${images[currentIndex].alt}`} 
                   fill 
                   className="object-contain"
                   quality={100}
@@ -156,7 +148,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: string
                   </button>
                   
                   <span className="text-sm font-mono text-muted tracking-widest uppercase">
-                    {formatImageName(images[currentIndex])}
+                    {images[currentIndex].alt}
                   </span>
                   
                   <button 
