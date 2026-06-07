@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Project } from '@/lib/projects'
 
 export default function CaseStudyCard({ project }: { project: Project }) {
@@ -29,13 +30,11 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         </div>
       </div>
       
-      {/* Placeholder for project thumbnail */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-0"></div>
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
-        <svg className="w-32 h-32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      </div>
+      {/* Project Thumbnail */}
+      {project.thumbnail && (
+        <Image src={project.thumbnail} alt={project.title} fill className="object-cover z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-0"></div>
     </Link>
   )
 }

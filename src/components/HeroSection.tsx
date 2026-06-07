@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import VideoIntro from './VideoIntro'
 
@@ -68,10 +69,7 @@ export default function HeroSection() {
           className="lg:col-span-4 relative flex flex-col items-center lg:items-end"
         >
           <div className="relative w-full max-w-[16rem] aspect-[4/5] bg-surface rounded-2xl overflow-hidden border border-border flex items-center justify-center">
-            {/* SVG Placeholder for avatar */}
-            <svg className="w-24 h-24 text-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
+            <Image src="/assets/Ace/PORTRAIT-01.jpg" alt="Ace Philip Denulan" fill className="object-cover" />
             
             <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md border border-border px-3 py-2 rounded-full flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Project } from '@/lib/projects'
 
 export default function CaseStudyFull({ project }: { project: Project }) {
@@ -34,10 +35,12 @@ export default function CaseStudyFull({ project }: { project: Project }) {
         </div>
       </header>
 
-      {/* Main Image Placeholder */}
-      <div className="aspect-video w-full bg-surface rounded-2xl border border-border mb-16 flex items-center justify-center">
-        <span className="text-muted text-sm font-mono uppercase tracking-widest">Project Thumbnail / Screenshot</span>
-      </div>
+      {/* Main Image */}
+      {project.thumbnail && (
+        <div className="relative aspect-video w-full bg-surface rounded-2xl overflow-hidden border border-border mb-16 flex items-center justify-center">
+          <Image src={project.thumbnail} alt={project.title} fill className="object-cover" />
+        </div>
+      )}
 
       <div className="space-y-16">
         {project.caseStudy.problem && (
@@ -91,6 +94,19 @@ export default function CaseStudyFull({ project }: { project: Project }) {
             <p className="text-lg text-muted leading-relaxed italic border-l-2 border-border pl-6">
               "{project.caseStudy.reflection}"
             </p>
+          </section>
+        )}
+
+        {project.caseStudy.gallery && project.caseStudy.gallery.length > 0 && (
+          <section>
+            <h2 className="text-3xl font-serif mb-6">Gallery</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {project.caseStudy.gallery.map((img, idx) => (
+                <div key={idx} className="relative aspect-video rounded-xl overflow-hidden border border-border">
+                  <Image src={img} alt={`${project.title} gallery image ${idx + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+              ))}
+            </div>
           </section>
         )}
       </div>
