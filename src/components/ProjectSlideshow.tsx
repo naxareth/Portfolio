@@ -36,7 +36,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
   return (
     <>
       <div 
-        className="relative aspect-video w-full bg-surface rounded-2xl overflow-hidden border border-border mb-16 flex items-center justify-center group cursor-zoom-in"
+        className="relative aspect-video w-full bg-black rounded-2xl overflow-hidden border border-white/10 mb-16 flex items-center justify-center group cursor-zoom-in"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={openModal}
@@ -61,11 +61,11 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
         </AnimatePresence>
 
         {/* Overlay gradient for caption */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 to-transparent z-10 pointer-events-none" />
 
         {/* Caption */}
         <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
-          <span className="text-sm font-mono bg-background/50 backdrop-blur-md px-3 py-1.5 rounded-md border border-border/50 text-foreground">
+          <span className="text-sm font-mono bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/20 text-white">
             {images[currentIndex].alt}
           </span>
         </div>
@@ -75,7 +75,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
           <>
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-background/50 backdrop-blur-md border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/80"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 text-white"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -83,7 +83,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-background/50 backdrop-blur-md border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/80"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 text-white"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -95,7 +95,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
               {images.map((_, idx) => (
                 <div 
                   key={idx} 
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-foreground scale-110' : 'bg-foreground/30 scale-100'}`}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-white scale-110' : 'bg-white/30 scale-100'}`}
                 />
               ))}
             </div>
@@ -110,12 +110,12 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-xl p-4 md:p-12 cursor-zoom-out"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-4 md:p-12 cursor-zoom-out"
             onClick={closeModal}
           >
             <button 
               onClick={closeModal}
-              className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-border hover:bg-surface transition-colors z-50 text-muted hover:text-foreground"
+              className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors z-50 text-gray-400 hover:text-white"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -140,20 +140,20 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
                 <div className="mt-6 flex items-center gap-6" onClick={(e) => e.stopPropagation()}>
                   <button 
                     onClick={prevSlide}
-                    className="p-3 rounded-full bg-surface/50 border border-border hover:bg-surface transition-colors text-muted hover:text-foreground"
+                    className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-gray-400 hover:text-white"
                   >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   
-                  <span className="text-sm font-mono text-muted tracking-widest uppercase">
+                  <span className="text-sm font-mono text-gray-300 tracking-widest uppercase">
                     {images[currentIndex].alt}
                   </span>
                   
                   <button 
                     onClick={nextSlide}
-                    className="p-3 rounded-full bg-surface/50 border border-border hover:bg-surface transition-colors text-muted hover:text-foreground"
+                    className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-gray-400 hover:text-white"
                   >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
