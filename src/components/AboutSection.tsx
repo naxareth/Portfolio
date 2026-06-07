@@ -11,7 +11,7 @@ export default function AboutSection() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div className="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden">
-            <Image src="/assets/Ace/PORTRAIT-02-NO_BG-v2.png" alt="Ace Philip Denulan" fill className="object-contain object-bottom" />
+            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill className="object-contain object-bottom" />
           </div>
 
           <div>

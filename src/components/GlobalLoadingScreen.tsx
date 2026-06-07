@@ -9,7 +9,7 @@ export default function GlobalLoadingScreen() {
   useEffect(() => {
     // List of critical images to preload
     const criticalImages = [
-      '/assets/Ace/PORTRAIT-02-NO_BG-v2.png'
+      '/assets/Ace/temporary-pic.jpg'
     ]
     
     let loadedCount = 0;
