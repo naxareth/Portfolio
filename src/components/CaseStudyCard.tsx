@@ -52,7 +52,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
       </div>
       
       {/* Project Gallery Slideshow */}
-      <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500 overflow-hidden bg-surface">
+      <div className="absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden bg-surface">
         <AnimatePresence initial={false}>
           {images.length > 0 && (
             <motion.div
@@ -75,7 +75,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10"></div>
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10"></div>
     </Link>
   )
 }
