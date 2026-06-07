@@ -14,7 +14,14 @@ export default function CaseStudyFull({ project }: { project: Project }) {
             ← Back to Work
           </Link>
         </div>
-        <h1 className="text-5xl md:text-7xl font-serif mb-6">{project.title}</h1>
+        <div className="flex items-center gap-6 mb-6">
+          {project.thumbnail && (
+            <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0 bg-surface rounded-2xl border border-border p-2 overflow-hidden flex items-center justify-center">
+              <Image src={project.thumbnail} alt={`${project.title} logo`} fill className="object-contain p-2" />
+            </div>
+          )}
+          <h1 className="text-5xl md:text-7xl font-serif">{project.title}</h1>
+        </div>
         <div className="flex flex-wrap items-center gap-4 mb-8">
           {project.tags.map(tag => (
             <span key={tag} className="text-sm font-mono text-muted border border-border px-3 py-1 rounded-full">

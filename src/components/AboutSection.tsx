@@ -10,8 +10,8 @@ export default function AboutSection() {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          <div className="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-surface border border-border">
-            <Image src="/assets/Ace/PORTRAIT-02.jpg" alt="Ace Philip Denulan" fill className="object-cover" />
+          <div className="relative aspect-square md:aspect-[4/3] rounded-2xl bg-surface border border-border flex items-end justify-center">
+            <Image src="/assets/Ace/PORTRAIT-02-NO_BG.png" alt="Ace Philip Denulan" fill className="object-contain object-bottom" />
           </div>
 
           <div>
