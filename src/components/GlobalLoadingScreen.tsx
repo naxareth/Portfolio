@@ -11,9 +11,9 @@ export default function GlobalLoadingScreen() {
     const criticalImages = [
       '/assets/Ace/temporary-pic.jpg'
     ]
-    
+
     let loadedCount = 0;
-    
+
     const checkAllLoaded = () => {
       loadedCount++;
       if (loadedCount === criticalImages.length) {
@@ -31,28 +31,28 @@ export default function GlobalLoadingScreen() {
 
     // Fallback if images take way too long
     const timeout = setTimeout(() => setIsLoading(false), 5000)
-    
+
     return () => clearTimeout(timeout)
   }, [])
 
   return (
     <AnimatePresence>
       {isLoading && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
         >
-          <motion.h1 
+          <motion.h1
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="text-4xl font-serif tracking-widest text-foreground"
           >
-            Ace.
+            acePhilip
           </motion.h1>
           <div className="mt-8 w-48 h-[1px] bg-border overflow-hidden relative">
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 h-full bg-foreground"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}

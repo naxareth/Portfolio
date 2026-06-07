@@ -29,7 +29,7 @@ export default function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="text-2xl font-serif">
-          Ace.
+          acePhilip
         </Link>
 
         {/* Desktop Nav */}
@@ -46,7 +46,7 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-4">
-          <button 
+          <button
             onClick={toggleTheme}
             className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-foreground hover:bg-surface transition-colors shrink-0"
             aria-label="Toggle theme"
@@ -57,16 +57,16 @@ export default function Nav() {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
             )}
           </button>
-          
-          <Link 
-            href="/contact" 
+
+          <Link
+            href="/contact"
             className="hidden sm:flex px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Let's talk
           </Link>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden w-10 h-10 flex items-center justify-center text-muted hover:text-foreground shrink-0"
             aria-label="Toggle menu"
