@@ -4,50 +4,175 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
+function formatImageName(url: string) {
+  const filename = url.split('/').pop()?.split('.')[0] || ''
+  return filename
+    .replace(/[-_]/g, ' ')
+    .replace(/\bSS\b/gi, 'Screenshot')
+    .toLowerCase()
+    .replace(/\b\w/g, c => c.toUpperCase())
+}
+
 export default function ProjectSlideshow({ images, altPrefix }: { images: string[], altPrefix: string }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
-    if (images.length <= 1) return;
+    if (images.length <= 1 || isModalOpen || isHovered) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [images.length])
+  }, [images.length, isModalOpen, isHovered])
 
   if (!images || images.length === 0) return null;
 
+  const nextSlide = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
   return (
-    <div className="relative aspect-video w-full bg-surface rounded-2xl overflow-hidden border border-border mb-16 flex items-center justify-center">
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
-        >
-          <Image 
-            src={images[currentIndex]} 
-            alt={`${altPrefix} preview`} 
-            fill 
-            className="object-cover"
-            priority={currentIndex === 0}
-          />
-        </motion.div>
-      </AnimatePresence>
-      
-      {images.length > 1 && (
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
-          {images.map((_, idx) => (
-            <div 
-              key={idx} 
-              className={`w-2 h-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-foreground' : 'bg-foreground/20'}`}
+    <>
+      <div 
+        className="relative aspect-video w-full bg-surface rounded-2xl overflow-hidden border border-border mb-16 flex items-center justify-center group cursor-zoom-in"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={openModal}
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0"
+          >
+            <Image 
+              src={images[currentIndex]} 
+              alt={`${altPrefix} preview`} 
+              fill 
+              className="object-cover"
+              priority={currentIndex === 0}
             />
-          ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Overlay gradient for caption */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 to-transparent z-10 pointer-events-none" />
+
+        {/* Caption */}
+        <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
+          <span className="text-sm font-mono bg-background/50 backdrop-blur-md px-3 py-1.5 rounded-md border border-border/50 text-foreground">
+            {formatImageName(images[currentIndex])}
+          </span>
         </div>
-      )}
-    </div>
+        
+        {/* Navigation Arrows */}
+        {images.length > 1 && (
+          <>
+            <button 
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-background/50 backdrop-blur-md border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/80"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-background/50 backdrop-blur-md border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/80"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            
+            {/* Dots */}
+            <div className="absolute bottom-6 right-6 flex justify-center gap-2 z-20 pointer-events-none">
+              {images.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-foreground scale-110' : 'bg-foreground/30 scale-100'}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Fullscreen Modal Lightbox */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-xl p-4 md:p-12 cursor-zoom-out"
+            onClick={closeModal}
+          >
+            <button 
+              onClick={closeModal}
+              className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-surface/50 border border-border hover:bg-surface transition-colors z-50 text-muted hover:text-foreground"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="relative w-full h-full flex flex-col items-center justify-center">
+              <div 
+                className="relative w-full max-h-[85vh] aspect-video max-w-7xl rounded-xl overflow-hidden cursor-default shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image 
+                  src={images[currentIndex]} 
+                  alt={`${altPrefix} full size preview`} 
+                  fill 
+                  className="object-contain"
+                  quality={100}
+                />
+              </div>
+
+              {images.length > 1 && (
+                <div className="mt-6 flex items-center gap-6" onClick={(e) => e.stopPropagation()}>
+                  <button 
+                    onClick={prevSlide}
+                    className="p-3 rounded-full bg-surface/50 border border-border hover:bg-surface transition-colors text-muted hover:text-foreground"
+                  >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  
+                  <span className="text-sm font-mono text-muted tracking-widest uppercase">
+                    {formatImageName(images[currentIndex])}
+                  </span>
+                  
+                  <button 
+                    onClick={nextSlide}
+                    className="p-3 rounded-full bg-surface/50 border border-border hover:bg-surface transition-colors text-muted hover:text-foreground"
+                  >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
