@@ -21,7 +21,7 @@ export default function AboutPage() {
             <span className="italic text-muted">speed.</span>
           </h1>
           
-          <div className="aspect-video w-full max-w-4xl bg-surface rounded-2xl overflow-hidden border border-border mb-24 flex flex-col items-center justify-center">
+          <div className="mx-auto aspect-video w-full max-w-4xl bg-surface rounded-2xl overflow-hidden border border-border mb-24 flex flex-col items-center justify-center">
             {/* Full video embed slot */}
             <span className="text-4xl mb-4 text-muted">▶</span>
             <p className="text-muted">Full Intro Video Slot</p>
