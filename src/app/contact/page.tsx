@@ -21,17 +21,24 @@ export default function ContactPage() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a 
-              href="mailto:contact@example.com" 
+              href="mailto:acephilipdenulan12@gmail.com" 
               className="w-full sm:w-auto px-8 py-4 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Send an Email
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/ace-philip-soriano-denulan-2b55603a3" 
+              target="_blank" rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 border border-border rounded-full text-sm font-medium hover:bg-surface transition-colors"
+            >
+              LinkedIn
             </a>
             <a 
               href="https://github.com/naxareth" 
               target="_blank" rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 border border-border rounded-full text-sm font-medium hover:bg-surface transition-colors"
             >
-              GitHub Profile
+              GitHub
             </a>
           </div>
         </div>
