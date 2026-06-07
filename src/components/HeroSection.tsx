@@ -70,11 +70,6 @@ export default function HeroSection() {
         >
           <div className="relative w-full max-w-[16rem] aspect-[4/5] bg-surface rounded-2xl border border-border flex items-center justify-center overflow-hidden">
             <Image src="/assets/Ace/PORTRAIT-02-NO_BG-v2.png" alt="Ace Philip Denulan" fill className="object-contain object-bottom" priority />
-            
-            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md border border-border px-3 py-2 rounded-full flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-xs font-medium whitespace-nowrap">Available for OJT — Jan 2026</span>
-            </div>
           </div>
 
           <div className="w-full flex justify-center lg:justify-end lg:pr-4 mt-4">

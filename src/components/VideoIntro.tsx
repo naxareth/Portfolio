@@ -26,11 +26,15 @@ export default function VideoIntro() {
             >
               ✕
             </button>
-            {/* Placeholder for actual video embed */}
-            <div className="w-full h-full flex flex-col items-center justify-center text-muted">
-              <span className="text-4xl mb-4">▶</span>
-              <p>Video intro coming soon</p>
-            </div>
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/IUfA_J4eES0?autoplay=1"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       )}

@@ -5,7 +5,7 @@ import MarqueeStrip from './MarqueeStrip'
 export default function AboutSection() {
   return (
     <>
-      <MarqueeStrip items="Ace Philip Denulan +++ " />
+      <MarqueeStrip items="Ace Philip Denulan +++ System Developer +++ Applied Analytics +++ BSIT Student +++ Problem Solver +++ " />
       
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

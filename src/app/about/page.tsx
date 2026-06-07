@@ -22,9 +22,15 @@ export default function AboutPage() {
           </h1>
           
           <div className="mx-auto aspect-video w-full max-w-4xl bg-surface rounded-2xl overflow-hidden border border-border mb-24 flex flex-col items-center justify-center">
-            {/* Full video embed slot */}
-            <span className="text-4xl mb-4 text-muted">▶</span>
-            <p className="text-muted">Full Intro Video Slot</p>
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/IUfA_J4eES0"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </div>
         </section>
 
