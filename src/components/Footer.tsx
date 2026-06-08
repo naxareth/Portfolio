@@ -10,7 +10,7 @@ export default function Footer() {
           style={{
             backgroundImage: "url('/assets/Background/tree-silhouette-2-2.png')",
             backgroundSize: "cover",
-            backgroundPosition: "top center"
+            backgroundPosition: "top right"
           }}
         />
         
