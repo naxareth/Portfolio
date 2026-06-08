@@ -38,6 +38,9 @@ export default function Nav() {
       Math.max(y, innerHeight - y)
     );
 
+    // Disable all CSS transitions globally during the View Transition
+    document.documentElement.classList.add('theme-transitioning');
+
     const transition = document.startViewTransition(() => {
       flushSync(() => {
         if (isDarkNew) {
@@ -65,6 +68,11 @@ export default function Nav() {
           pseudoElement: isDarkNew ? '::view-transition-old(root)' : '::view-transition-new(root)',
         }
       );
+    });
+
+    // Re-enable CSS transitions after the animation finishes
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove('theme-transitioning');
     });
   }
 
