@@ -56,12 +56,12 @@
   }
 
   ::selection {
-    background-color: #ec4899; /* pink-500 */
+    background-color: #f59e0b; /* amber-500 */
     color: #ffffff;
   }
   
   .dark ::selection {
-    background-color: #9333ea; /* purple-600 */
+    background-color: #ea580c; /* orange-600 */
     color: #ffffff;
   }
 }

@@ -35,7 +35,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-muted leading-relaxed mb-12">
-              I'm Ace Philip S. Denulan — a 4th-year BSIT student at PHINMA University of Pangasinan, specializing in <span className="text-purple-600 dark:text-purple-400 font-medium">System Development</span> with an eye toward <span className="text-red-500 dark:text-red-400 font-medium">Applied Analytics</span>. I believe every system worth building starts with structure.
+              I'm Ace Philip S. Denulan — a 4th-year BSIT student at PHINMA University of Pangasinan, specializing in <span className="text-orange-600 dark:text-orange-400 font-medium">System Development</span> with an eye toward <span className="text-amber-500 dark:text-amber-400 font-medium">Applied Analytics</span>. I believe every system worth building starts with structure.
             </p>
 
             <div className="grid grid-cols-2 gap-8 mb-12">
