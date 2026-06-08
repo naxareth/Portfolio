@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="px-4 md:px-8 pb-8 mt-24">
-      <div className="relative max-w-6xl mx-auto bg-surface/95 dark:bg-[#12100e]/90 backdrop-blur-xl border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden">
+      <div className="relative max-w-6xl mx-auto bg-surface/95 dark:bg-[#181614]/90 backdrop-blur-xl border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden">
         {/* Tree Silhouette Background */}
         <div 
           className="absolute opacity-[0.03] dark:opacity-[0.08] dark:invert pointer-events-none w-[800px] h-[800px] -right-[300px] top-[50px]"
