@@ -8,9 +8,9 @@ export default function Footer() {
         <div 
           className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] dark:invert pointer-events-none"
           style={{
-            backgroundImage: "url('/assets/Background/topography.svg')",
+            backgroundImage: "url('/assets/Background/tree-silhouette-2-2.png')",
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "top center"
           }}
         />
         
