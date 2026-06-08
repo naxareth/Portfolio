@@ -138,23 +138,23 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
               </div>
 
               {images.length > 1 && (
-                <div className="mt-6 flex items-center gap-6" onClick={(e) => e.stopPropagation()}>
+                <div className="mt-6 flex items-center justify-center gap-4 w-full max-w-3xl px-4" onClick={(e) => e.stopPropagation()}>
                   <button 
                     onClick={prevSlide}
-                    className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-gray-400 hover:text-white"
+                    className="p-3 shrink-0 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-gray-400 hover:text-white"
                   >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   
-                  <span className="text-sm font-mono text-gray-300 tracking-widest uppercase">
+                  <span className="text-xs sm:text-sm font-mono text-gray-300 tracking-widest uppercase text-center flex-1 min-w-0 break-words px-2">
                     {images[currentIndex].alt}
                   </span>
                   
                   <button 
                     onClick={nextSlide}
-                    className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-gray-400 hover:text-white"
+                    className="p-3 shrink-0 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-gray-400 hover:text-white"
                   >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
