@@ -16,16 +16,16 @@ export default function PhilosophySection() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-            <div className="p-8 border border-border rounded-xl bg-surface">
+            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
               <p className="font-serif text-lg">"Structure before speed."</p>
             </div>
-            <div className="p-8 border border-border rounded-xl bg-surface">
+            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
               <p className="font-serif text-lg">"A system you don't understand is a system you don't own."</p>
             </div>
-            <div className="p-8 border border-border rounded-xl bg-surface">
+            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
               <p className="font-serif text-lg">"Meticulous planning isn't overthinking — it's respect for the problem."</p>
             </div>
-            <div className="p-8 border border-border rounded-xl bg-surface">
+            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
               <p className="font-serif text-lg">"Competence is built, not claimed."</p>
             </div>
           </div>

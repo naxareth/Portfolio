@@ -27,7 +27,7 @@ const skills = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 px-6 border-y border-border bg-surface/50 backdrop-blur-sm">
+    <section id="skills" className="py-24 px-6 border-y border-border bg-surface/50 backdrop-blur-sm [text-shadow:none]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-serif mb-16">What I Do</h2>
         
