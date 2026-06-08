@@ -26,9 +26,32 @@ export default function CaseStudyCard({ project }: { project: Project }) {
 
   if (project.depth === 'placeholder') {
     return (
-      <div className="group relative aspect-[4/3] rounded-xl border border-border bg-surface flex flex-col items-center justify-center p-6 text-center">
-        <span className="text-sm font-mono text-muted mb-4 uppercase">{project.title}</span>
-        <p className="font-serif text-2xl text-muted">{project.brief}</p>
+      <div className="group relative aspect-[4/3] rounded-xl border border-border overflow-hidden bg-black cursor-not-allowed">
+        <div className="absolute inset-0 z-0 opacity-60 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden">
+          <Image 
+            src="/assets/Ace/UPCOMING-WORK.jpg" 
+            alt="Upcoming Work" 
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover blur-sm group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0" 
+          />
+        </div>
+        
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none"></div>
+        
+        <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
+          <div className="mt-auto">
+            <h3 className="text-3xl font-serif text-white drop-shadow-lg mb-2">{project.title}</h3>
+            <p className="text-gray-300 font-serif max-w-sm mb-4 drop-shadow-md">{project.brief}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span key={tag} className="text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
