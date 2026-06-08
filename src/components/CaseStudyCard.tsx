@@ -59,7 +59,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
   return (
     <Link 
       href={`/work/${project.slug}`}
-      className={`group block relative rounded-xl border border-border bg-surface overflow-hidden transition-colors hover:border-muted/50 ${project.featured ? 'md:col-span-2 aspect-[2/1]' : 'aspect-[4/3]'}`}
+      className={`group block relative rounded-xl border border-border bg-surface overflow-hidden transition-colors hover:border-muted/50 ${project.featured ? 'md:col-span-2 aspect-[4/3] md:aspect-[2/1]' : 'aspect-[4/3]'}`}
     >
       <div className="absolute inset-0 bg-black/5 p-8 flex flex-col justify-end z-20">
         <div className="mt-auto">
