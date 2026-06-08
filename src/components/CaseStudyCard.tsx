@@ -70,18 +70,18 @@ export default function CaseStudyCard({ project }: { project: Project }) {
           {images.length > 0 && (
               <motion.div
               key={currentImageIndex}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="absolute inset-0 blur-[8px] group-hover:blur-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
+              className="absolute inset-0"
             >
               <Image 
                 src={images[currentImageIndex].src} 
                 alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
+                className="object-cover blur-md group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out"
                 priority={currentImageIndex === 0}
               />
             </motion.div>
