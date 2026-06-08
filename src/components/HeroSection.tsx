@@ -80,7 +80,7 @@ export default function HeroSection() {
               alt="Ace Philip Denulan" 
               fill 
               sizes="(max-width: 768px) 100vw, 400px"
-              className="object-contain object-bottom" 
+              className="object-contain object-bottom grayscale sepia-[.3] hover:grayscale-0 hover:sepia-0 transition-all duration-700" 
               priority 
             />
           </div>

@@ -62,11 +62,11 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
         </AnimatePresence>
 
         {/* Overlay gradient for caption */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#1e1b18]/50 to-transparent z-10 pointer-events-none" />
 
         {/* Caption */}
         <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
-          <span className="text-sm font-mono bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/20 text-white">
+          <span className="text-sm font-mono bg-[#1e1b18]/50 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/20 text-white">
             {images[currentIndex].alt}
           </span>
         </div>
@@ -76,7 +76,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
           <>
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 text-white"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-[#1e1b18]/50 backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#1e1b18]/80 text-white"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -84,7 +84,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80 text-white"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-[#1e1b18]/50 backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#1e1b18]/80 text-white"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -20,7 +20,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             className="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden"
           >
-            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain object-bottom" />
+            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain object-bottom grayscale sepia-[.3] hover:grayscale-0 hover:sepia-0 transition-all duration-700" />
           </motion.div>
 
           <motion.div

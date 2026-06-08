@@ -27,18 +27,18 @@ export default function CaseStudyCard({ project }: { project: Project }) {
 
   if (project.depth === 'placeholder') {
     return (
-      <div className="group relative aspect-[4/3] rounded-xl border border-border overflow-hidden bg-black cursor-not-allowed">
+      <div className="group relative aspect-[4/3] rounded-xl border border-border overflow-hidden bg-[#1e1b18] cursor-not-allowed">
         <div className="absolute inset-0 z-0 opacity-60 overflow-hidden">
           <Image 
             src="/assets/Ace/UPCOMING-WORK.jpg" 
             alt="Upcoming Work" 
             fill 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover blur-[2px] scale-105 grayscale" 
+            className="object-cover blur-[2px] scale-105 grayscale sepia-[.3]" 
           />
         </div>
         
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#1e1b18]/80 to-transparent z-10 pointer-events-none"></div>
         
         <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
           <div className="mt-auto">
@@ -46,7 +46,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
             <p className="text-gray-300 font-serif max-w-sm mb-4 drop-shadow-md">{project.brief}</p>
             <div className="flex flex-wrap gap-2">
               {project.tags.map(tag => (
-                <span key={tag} className="flex items-center text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+                <span key={tag} className="flex items-center text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-[#1e1b18]/50 backdrop-blur-sm">
                   <TechIcon tag={tag} />
                   {tag}
                 </span>
@@ -67,13 +67,13 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         <div className="mt-auto">
           <div className="flex items-center gap-4 mb-4">
             {project.thumbnail && (
-              <div className="relative w-12 h-12 shrink-0 bg-black/50 backdrop-blur-sm rounded-xl border border-white/20 p-1 flex items-center justify-center overflow-hidden">
+              <div className="relative w-12 h-12 shrink-0 bg-[#1e1b18]/50 backdrop-blur-sm rounded-xl border border-white/20 p-1 flex items-center justify-center overflow-hidden">
                 <Image 
                   src={project.thumbnail} 
                   alt={`${project.title} logo`} 
                   fill 
                   sizes="48px"
-                  className="object-contain p-1.5 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  className="object-contain p-1.5 drop-shadow-[0_0_8px_rgba(30,27,24,0.3)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] grayscale sepia-[.3] group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-700" 
                 />
               </div>
             )}
@@ -81,7 +81,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
           </div>
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-              <span key={tag} className="flex items-center text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+              <span key={tag} className="flex items-center text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-[#1e1b18]/50 backdrop-blur-sm">
                 <TechIcon tag={tag} />
                 {tag}
               </span>
@@ -91,7 +91,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
       </div>
       
       {/* Project Gallery Slideshow */}
-      <div className="absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden bg-[#1e1b18]">
         <AnimatePresence initial={false}>
           {images.length > 0 && (
               <motion.div
@@ -107,7 +107,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
                 alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover blur-[2px] grayscale group-hover:grayscale-0 group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out"
+                className="object-cover blur-[2px] grayscale sepia-[.3] group-hover:grayscale-0 group-hover:sepia-0 group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out"
                 priority={currentImageIndex === 0}
               />
             </motion.div>
@@ -115,7 +115,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#1e1b18]/50 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500"></div>
     </Link>
   )
 }
