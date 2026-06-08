@@ -6,8 +6,18 @@ import { projects } from '@/lib/projects'
 
 export default function GlobalLoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
+  const [subtitle, setSubtitle] = useState("")
 
   useEffect(() => {
+    const subtitles = [
+      "Structuring the chaos.",
+      "System development & applied analytics.",
+      "Structure before speed.",
+      "Building systems that last.",
+      "Code that communicates intent."
+    ];
+    setSubtitle(subtitles[Math.floor(Math.random() * subtitles.length)]);
+    
     // Collect all critical images
     const projectThumbnails = projects.map(p => p.thumbnail).filter(Boolean) as string[]
     const projectFirstGalleryImages = projects
@@ -70,16 +80,29 @@ export default function GlobalLoadingScreen() {
             transition={{ duration: 2, ease: "linear" }}
           />
 
-          {/* Name Animating From Above to Center, then Exiting Below */}
-          <motion.h1
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+          {/* Name and Subtitle Animating */}
+          <motion.div
             exit={{ y: "100vh", opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="text-4xl font-serif tracking-widest text-foreground z-10 drop-shadow-sm"
+            className="flex flex-col items-center justify-center z-10"
           >
-            acePhilip
-          </motion.h1>
+            <motion.h1
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: -10, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+              className="text-4xl font-serif tracking-widest text-foreground drop-shadow-sm mb-4"
+            >
+              acePhilip
+            </motion.h1>
+            <motion.p
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.76, 0, 0.24, 1] }}
+              className="text-sm font-mono text-muted tracking-wide"
+            >
+              {subtitle}
+            </motion.p>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

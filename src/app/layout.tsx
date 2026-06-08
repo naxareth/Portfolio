@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 import GlobalLoadingScreen from "@/components/GlobalLoadingScreen";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function RootLayout({
   children,
@@ -47,6 +48,7 @@ export default function RootLayout({
         />
 
         <GlobalLoadingScreen />
+        <ScrollProgress />
         {children}
       </body>
     </html>
