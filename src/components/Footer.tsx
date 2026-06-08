@@ -3,9 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="px-4 md:px-8 pb-8 mt-24">
-      <div className="relative max-w-6xl mx-auto bg-surface/80 backdrop-blur-md border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden [text-shadow:none]">
-        {/* Substantial Dark Bottom Gradient Fade */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/40 dark:from-black/60 to-transparent pointer-events-none" />
+      <div className="relative max-w-6xl mx-auto bg-gradient-to-b from-surface/80 to-black/20 dark:to-black/40 backdrop-blur-md border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden [text-shadow:none]">
         
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
