@@ -48,14 +48,24 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute inset-0"
+            className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#1e1b18]"
           >
+            {/* Blurred Background to Fill Empty Space for Portrait/Odd Ratios */}
+            <Image 
+              src={images[currentIndex].src} 
+              alt="Background Blur"
+              fill 
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover opacity-50 blur-xl scale-110"
+              priority={currentIndex === 0}
+            />
+            {/* Main Image, Contained */}
             <Image 
               src={images[currentIndex].src} 
               alt={`${altPrefix} - ${images[currentIndex].alt}`} 
               fill 
               sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover"
+              className="object-contain z-10"
               priority={currentIndex === 0}
             />
           </motion.div>
@@ -130,10 +140,17 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
               >
                 <Image 
                   src={images[currentIndex].src} 
+                  alt="Background Blur" 
+                  fill 
+                  sizes="100vw"
+                  className="object-cover opacity-30 blur-2xl scale-110"
+                />
+                <Image 
+                  src={images[currentIndex].src} 
                   alt={`${altPrefix} - ${images[currentIndex].alt}`} 
                   fill 
                   sizes="100vw"
-                  className="object-contain"
+                  className="object-contain z-10"
                 />
               </div>
 
