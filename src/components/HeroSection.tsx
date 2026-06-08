@@ -38,7 +38,7 @@ export default function HeroSection() {
             className="text-[clamp(3rem,6vw,5.5rem)] leading-[1.1] font-serif mb-8"
           >
             IT Student <br />
-            <span className="italic bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">& Developer</span>
+            <span className="italic bg-gradient-to-b from-red-500 to-purple-600 bg-clip-text text-transparent">& Developer</span>
           </motion.h1>
 
           <motion.p 
@@ -47,7 +47,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-muted max-w-xl mb-12"
           >
-            I'm a 4th-year BSIT student specializing in System Development. I believe every system worth building starts with structure: a clear plan, a defensible architecture, and code that communicates intent.
+            I'm a 4th-year BSIT student specializing in <span className="text-purple-600 dark:text-purple-400 font-medium">System Development</span>. I believe every system worth building starts with <span className="text-red-500 dark:text-red-400 font-medium">structure</span>: a clear plan, a defensible architecture, and code that communicates intent.
           </motion.p>
 
           <motion.div 
@@ -58,7 +58,7 @@ export default function HeroSection() {
           >
             <Link 
               href="/work" 
-              className="px-8 py-4 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-full text-sm font-medium hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(236,72,153,0.2)] hover:shadow-[0_0_25px_rgba(236,72,153,0.4)]"
+              className="px-8 py-4 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             >
               View My Work
             </Link>
