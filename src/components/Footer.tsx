@@ -4,13 +4,14 @@ export default function Footer() {
   return (
     <footer className="px-4 md:px-8 pb-8 mt-24">
       <div className="relative max-w-6xl mx-auto bg-surface/80 backdrop-blur-md border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden">
-        {/* Topography Background */}
+        {/* Tree Silhouette Background */}
         <div 
-          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] dark:invert pointer-events-none"
+          className="absolute opacity-[0.03] dark:opacity-[0.08] dark:invert pointer-events-none w-[800px] h-[800px] -right-[300px] -top-[100px]"
           style={{
             backgroundImage: "url('/assets/Background/tree-silhouette-2-2.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "top right"
+            backgroundSize: "contain",
+            backgroundPosition: "top left",
+            backgroundRepeat: "no-repeat"
           }}
         />
         
