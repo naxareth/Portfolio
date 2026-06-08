@@ -62,10 +62,10 @@ export default function CaseStudyCard({ project }: { project: Project }) {
       href={`/work/${project.slug}`}
       className="group block relative rounded-xl border border-border bg-surface overflow-hidden transition-colors hover:border-muted/50 aspect-[4/3]"
     >
-      {/* Centered View Details Popup */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <span className="bg-[#b08d57] text-[#1e1b18] px-6 py-2 rounded-full font-mono text-sm font-semibold tracking-wide shadow-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-          View Project
+      {/* Top Curtain "Click to view more details" */}
+      <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-center h-16 bg-[#b08d57] text-[#1e1b18] shadow-xl -translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none">
+        <span className="font-mono text-sm font-semibold tracking-widest uppercase">
+          Click to view more details
         </span>
       </div>
 
