@@ -4,16 +4,18 @@ export default function Footer() {
   return (
     <footer className="px-4 md:px-8 pb-8 mt-24">
       <div className="relative max-w-6xl mx-auto bg-surface/95 dark:bg-[#181614]/90 backdrop-blur-xl border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden">
-        {/* Tree Silhouette Background */}
-        <div 
-          className="absolute opacity-[0.03] dark:opacity-[0.08] dark:invert pointer-events-none w-[800px] h-[800px] -right-[300px] top-[50px]"
-          style={{
-            backgroundImage: "url('/assets/Background/tree-silhouette-2-2.png')",
-            backgroundSize: "contain",
-            backgroundPosition: "top left",
-            backgroundRepeat: "no-repeat"
-          }}
-        />
+        {/* Contact SVG Background Watermark */}
+        <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[600px] h-[600px] pointer-events-none">
+          <div 
+            className="w-full h-full opacity-[0.03] dark:opacity-[0.05] dark:invert"
+            style={{
+              backgroundImage: "url('/assets/Background/contact-footer-bg.svg')",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat"
+            }}
+          />
+        </div>
         
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
