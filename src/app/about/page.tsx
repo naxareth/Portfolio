@@ -16,7 +16,7 @@ export default function AboutPage() {
         
         {/* 1. Hero */}
         <section className="px-6 py-12 max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-serif mb-12">
+          <h1 className="text-5xl md:text-7xl font-serif mb-12 text-center">
             Structure before <br className="hidden md:block" />
             <span className="italic text-muted">speed.</span>
           </h1>
