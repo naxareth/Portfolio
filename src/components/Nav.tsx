@@ -60,7 +60,7 @@ export default function Nav() {
 
           <Link
             href="/contact"
-            className="hidden sm:flex px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="hidden sm:flex px-6 py-2 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-full text-sm font-medium hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(236,72,153,0.2)] hover:shadow-[0_0_25px_rgba(236,72,153,0.4)]"
           >
             Let's talk
           </Link>

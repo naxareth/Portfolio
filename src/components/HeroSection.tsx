@@ -10,7 +10,10 @@ export default function HeroSection() {
     <section className="pt-40 pb-24 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
-        <div className="lg:col-span-8 flex flex-col items-start">
+        <div className="lg:col-span-8 flex flex-col items-start relative z-10">
+          {/* Subtle Ambient Glow */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-gradient-to-r from-red-500/10 to-purple-600/10 dark:from-red-500/20 dark:to-purple-600/20 rounded-full blur-[80px] -z-10 pointer-events-none" />
+          
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +38,7 @@ export default function HeroSection() {
             className="text-[clamp(3rem,6vw,5.5rem)] leading-[1.1] font-serif mb-8"
           >
             IT Student <br />
-            <span className="italic text-muted">& Developer</span>
+            <span className="italic bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">& Developer</span>
           </motion.h1>
 
           <motion.p 
@@ -55,7 +58,7 @@ export default function HeroSection() {
           >
             <Link 
               href="/work" 
-              className="px-8 py-4 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+              className="px-8 py-4 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-full text-sm font-medium hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(236,72,153,0.2)] hover:shadow-[0_0_25px_rgba(236,72,153,0.4)]"
             >
               View My Work
             </Link>
