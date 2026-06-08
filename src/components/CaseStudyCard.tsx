@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Project, ProjectGalleryImage } from '@/lib/projects'
+import TechIcon from './TechIcon'
 
 export default function CaseStudyCard({ project }: { project: Project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -45,7 +46,8 @@ export default function CaseStudyCard({ project }: { project: Project }) {
             <p className="text-gray-300 font-serif max-w-sm mb-4 drop-shadow-md">{project.brief}</p>
             <div className="flex flex-wrap gap-2">
               {project.tags.map(tag => (
-                <span key={tag} className="text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+                <span key={tag} className="flex items-center text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+                  <TechIcon tag={tag} />
                   {tag}
                 </span>
               ))}
@@ -79,7 +81,8 @@ export default function CaseStudyCard({ project }: { project: Project }) {
           </div>
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-              <span key={tag} className="text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+              <span key={tag} className="flex items-center text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+                <TechIcon tag={tag} />
                 {tag}
               </span>
             ))}

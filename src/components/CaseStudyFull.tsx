@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Project } from '@/lib/projects'
 import ProjectSlideshow from './ProjectSlideshow'
+import TechIcon from './TechIcon'
 
 export default function CaseStudyFull({ project }: { project: Project }) {
   if (!project.caseStudy) return null;
@@ -30,7 +31,8 @@ export default function CaseStudyFull({ project }: { project: Project }) {
         </div>
         <div className="flex flex-wrap items-center gap-4 mb-8">
           {project.tags.map(tag => (
-            <span key={tag} className="text-sm font-mono text-muted border border-border px-3 py-1 rounded-full">
+            <span key={tag} className="flex items-center text-sm font-mono text-muted border border-border px-3 py-1 rounded-full">
+              <TechIcon tag={tag} />
               {tag}
             </span>
           ))}
@@ -90,7 +92,8 @@ export default function CaseStudyFull({ project }: { project: Project }) {
             <h2 className="text-3xl font-serif mb-6">Stack</h2>
             <div className="flex flex-wrap gap-2">
               {project.caseStudy.stack.map(item => (
-                <span key={item} className="text-sm border border-border px-3 py-1 rounded bg-surface text-muted">
+                <span key={item} className="flex items-center text-sm border border-border px-3 py-1 rounded bg-surface text-muted">
+                  <TechIcon tag={item} />
                   {item}
                 </span>
               ))}
