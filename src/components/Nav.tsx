@@ -15,14 +15,54 @@ export default function Nav() {
     setIsDark(document.documentElement.classList.contains('dark'))
   }, [])
 
-  const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark')
-      setIsDark(false)
-    } else {
-      document.documentElement.classList.add('dark')
-      setIsDark(true)
+  const toggleTheme = (e: React.MouseEvent) => {
+    const isDarkNew = !isDark;
+    
+    // Fallback for browsers that don't support View Transitions
+    if (!document.startViewTransition) {
+      if (isDarkNew) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+      setIsDark(isDarkNew)
+      return;
     }
+
+    const x = e.clientX;
+    const y = e.clientY;
+
+    const endRadius = Math.hypot(
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y)
+    );
+
+    const transition = document.startViewTransition(() => {
+      if (isDarkNew) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+      setIsDark(isDarkNew)
+    });
+
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`
+      ];
+
+      document.documentElement.animate(
+        {
+          clipPath: isDarkNew ? [...clipPath].reverse() : clipPath,
+        },
+        {
+          duration: 400,
+          easing: 'ease-in',
+          pseudoElement: isDarkNew ? '::view-transition-old(root)' : '::view-transition-new(root)',
+        }
+      );
+    });
   }
 
   return (
