@@ -4,7 +4,9 @@ export default function Footer() {
   return (
     <footer className="px-4 md:px-8 pb-8 mt-24">
       <div className="relative max-w-6xl mx-auto bg-surface/80 backdrop-blur-md border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden [text-shadow:none]">
-        {/* Placeholder for future silhouette background */}
+        {/* Subtle Bottom Gradient Fade */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-foreground/5 dark:from-foreground/10 to-transparent pointer-events-none" />
+        
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <h3 className="text-3xl font-serif mb-4">acePhilip</h3>
