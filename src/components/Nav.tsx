@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export default function Nav() {
   const pathname = usePathname()
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {

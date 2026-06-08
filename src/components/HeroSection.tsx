@@ -11,9 +11,6 @@ export default function HeroSection() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         <div className="lg:col-span-8 flex flex-col items-start relative z-10">
-          {/* Subtle Ambient Glow */}
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-gradient-to-r from-red-500/10 to-purple-600/10 dark:from-red-500/20 dark:to-purple-600/20 rounded-full blur-[80px] -z-10 pointer-events-none" />
-          
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
