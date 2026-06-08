@@ -3,14 +3,15 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="px-4 md:px-8 pb-8 mt-24">
-      <div className="max-w-6xl mx-auto bg-surface/80 backdrop-blur-md border border-border shadow-lg rounded-3xl p-8 md:p-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div className="relative max-w-6xl mx-auto bg-surface/80 backdrop-blur-md border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden [text-shadow:none]">
+        {/* Placeholder for future silhouette background */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-          <h3 className="text-3xl font-serif mb-4">acePhilip</h3>
-          <p className="text-muted text-sm max-w-xs">
-            System Development & Applied Analytics. Structurally sound, meticulously planned.
-          </p>
-        </div>
+            <h3 className="text-3xl font-serif mb-4">acePhilip</h3>
+            <p className="text-muted text-sm max-w-xs">
+              System Development & Applied Analytics. Structurally sound, meticulously planned.
+            </p>
+          </div>
 
         <div>
           <h4 className="font-serif text-xl mb-4">Pages</h4>
@@ -53,9 +54,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border/50 pt-8 flex justify-center text-muted text-xs">
-        <p>© 2026 Ace Philip S. Denulan</p>
-      </div>
+        <div className="relative z-10 border-t border-border/50 pt-8 flex justify-center text-muted text-xs">
+          <p>© 2026 Ace Philip S. Denulan</p>
+        </div>
     </div>
   </footer>
   )
