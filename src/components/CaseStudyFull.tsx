@@ -21,6 +21,7 @@ export default function CaseStudyFull({ project }: { project: Project }) {
                 src={project.thumbnail} 
                 alt={`${project.title} logo`} 
                 fill 
+                sizes="80px"
                 className="object-contain p-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" 
               />
             </div>
@@ -54,7 +55,7 @@ export default function CaseStudyFull({ project }: { project: Project }) {
         <ProjectSlideshow images={project.caseStudy.gallery} altPrefix={project.title} />
       ) : project.thumbnail ? (
         <div className="relative aspect-video w-full bg-surface rounded-2xl overflow-hidden border border-border mb-16 flex items-center justify-center">
-          <Image src={project.thumbnail} alt={project.title} fill className="object-cover" />
+          <Image src={project.thumbnail} alt={project.title} fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
         </div>
       ) : null}
 

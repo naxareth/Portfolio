@@ -67,6 +67,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
                 src={images[currentImageIndex].src} 
                 alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
                 priority={currentImageIndex === 0}
               />

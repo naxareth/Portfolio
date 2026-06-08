@@ -75,7 +75,14 @@ export default function HeroSection() {
           className="lg:col-span-4 relative flex flex-col items-center lg:items-end"
         >
           <div className="relative w-full max-w-sm aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden">
-            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill className="object-contain object-bottom" priority />
+            <Image 
+              src="/assets/Ace/temporary-pic.jpg" 
+              alt="Ace Philip Denulan" 
+              fill 
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="object-contain object-bottom" 
+              priority 
+            />
           </div>
 
           <div className="w-full flex justify-center lg:justify-end lg:pr-4 mt-4">
