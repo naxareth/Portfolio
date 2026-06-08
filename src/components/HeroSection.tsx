@@ -65,9 +65,6 @@ export default function HeroSection() {
             >
               About me →
             </Link>
-            <div className="lg:hidden mt-2 sm:mt-0">
-              <VideoIntro />
-            </div>
           </motion.div>
         </div>
 
@@ -75,7 +72,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="lg:col-span-4 relative flex flex-col items-center lg:items-end mt-12 lg:mt-0"
+          className="lg:col-span-4 relative flex flex-col items-center lg:items-end mt-12 lg:mt-16"
         >
           <div className="relative w-full max-w-sm aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden">
             <Image 
@@ -88,7 +85,7 @@ export default function HeroSection() {
             />
           </div>
 
-          <div className="hidden lg:flex w-full justify-end pr-4 mt-4">
+          <div className="w-full flex justify-center lg:justify-end lg:pr-4 mt-4">
             <VideoIntro />
           </div>
         </motion.div>
