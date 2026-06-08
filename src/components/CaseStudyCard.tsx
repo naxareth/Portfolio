@@ -42,7 +42,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         <div className="mt-auto">
           <div className="flex items-center gap-4 mb-4">
             {project.thumbnail && (
-              <div className="relative w-12 h-12 shrink-0 bg-surface rounded-xl border border-white/10 p-1 flex items-center justify-center overflow-hidden">
+              <div className="relative w-12 h-12 shrink-0 bg-black/50 backdrop-blur-sm rounded-xl border border-white/20 p-1 flex items-center justify-center overflow-hidden">
                 <Image 
                   src={project.thumbnail} 
                   alt={`${project.title} logo`} 
@@ -68,20 +68,20 @@ export default function CaseStudyCard({ project }: { project: Project }) {
       <div className="absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden bg-black">
         <AnimatePresence initial={false}>
           {images.length > 0 && (
-            <motion.div
+              <motion.div
               key={currentImageIndex}
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="absolute inset-0"
+              className="absolute inset-0 blur-[8px] group-hover:blur-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
             >
               <Image 
                 src={images[currentImageIndex].src} 
                 alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover blur-[8px] group-hover:blur-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
+                className="object-cover"
                 priority={currentImageIndex === 0}
               />
             </motion.div>
