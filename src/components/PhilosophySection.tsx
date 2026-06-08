@@ -16,17 +16,36 @@ export default function PhilosophySection() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
-              <p className="font-serif text-lg">"Structure before speed."</p>
+            <div className="relative p-8 border border-border rounded-xl bg-surface [text-shadow:none] overflow-hidden group">
+              <div 
+                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] dark:invert transition-opacity duration-500 group-hover:opacity-[0.06] dark:group-hover:opacity-[0.15] pointer-events-none"
+                style={{ backgroundImage: "url('/assets/Background/PHILOSOPHY-BG.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+              />
+              <p className="relative z-10 font-serif text-lg">"Structure before speed."</p>
             </div>
-            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
-              <p className="font-serif text-lg">"A system you don't understand is a system you don't own."</p>
+            
+            <div className="relative p-8 border border-border rounded-xl bg-surface [text-shadow:none] overflow-hidden group">
+              <div 
+                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] dark:invert transition-opacity duration-500 group-hover:opacity-[0.06] dark:group-hover:opacity-[0.15] pointer-events-none"
+                style={{ backgroundImage: "url('/assets/Background/PHILOSOPHY-BG.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+              />
+              <p className="relative z-10 font-serif text-lg">"A system you don't understand is a system you don't own."</p>
             </div>
-            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
-              <p className="font-serif text-lg">"Meticulous planning isn't overthinking — it's respect for the problem."</p>
+            
+            <div className="relative p-8 border border-border rounded-xl bg-surface [text-shadow:none] overflow-hidden group">
+              <div 
+                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] dark:invert transition-opacity duration-500 group-hover:opacity-[0.06] dark:group-hover:opacity-[0.15] pointer-events-none"
+                style={{ backgroundImage: "url('/assets/Background/PHILOSOPHY-BG.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+              />
+              <p className="relative z-10 font-serif text-lg">"Meticulous planning isn't overthinking — it's respect for the problem."</p>
             </div>
-            <div className="p-8 border border-border rounded-xl bg-surface [text-shadow:none]">
-              <p className="font-serif text-lg">"Competence is built, not claimed."</p>
+            
+            <div className="relative p-8 border border-border rounded-xl bg-surface [text-shadow:none] overflow-hidden group">
+              <div 
+                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] dark:invert transition-opacity duration-500 group-hover:opacity-[0.06] dark:group-hover:opacity-[0.15] pointer-events-none"
+                style={{ backgroundImage: "url('/assets/Background/PHILOSOPHY-BG.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+              />
+              <p className="relative z-10 font-serif text-lg">"Competence is built, not claimed."</p>
             </div>
           </div>
 
