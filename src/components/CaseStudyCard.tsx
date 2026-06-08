@@ -63,7 +63,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
       className="group block relative rounded-xl border border-border bg-surface overflow-hidden transition-colors hover:border-muted/50 aspect-[4/3]"
     >
       {/* Top Curtain "Click to view more details" */}
-      <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-center h-16 bg-[#b08d57] text-[#1e1b18] shadow-xl -translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none">
+      <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-center h-16 bg-[#e8dfd1] text-[#1e1b18] shadow-xl -translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none">
         <span className="font-mono text-sm font-semibold tracking-widest uppercase">
           Click to view more details
         </span>
