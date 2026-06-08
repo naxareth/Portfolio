@@ -35,7 +35,17 @@ export default function RootLayout({
       lang="en"
       className={`${dmSerifDisplay.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative">
+        {/* Topography Background Overlay */}
+        <div 
+          className="pointer-events-none fixed inset-0 z-[-1] opacity-[0.04] dark:opacity-[0.06] dark:invert"
+          style={{
+            backgroundImage: `url("/assets/Background/topography.svg")`,
+            backgroundSize: '600px',
+            backgroundRepeat: 'repeat',
+          }}
+        />
+
         <GlobalLoadingScreen />
         {children}
       </body>
