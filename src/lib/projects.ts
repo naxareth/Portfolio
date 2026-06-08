@@ -83,7 +83,7 @@ export const projects: Project[] = [
     brief: 'ORBIT is a full-stack IoT + AI project built for Advanced Programming. It integrates hardware IoT scripts with a Django REST API backend, a Flutter mobile client, and a Next.js web frontend. The system bridges physical sensors with an AI processing layer and stores structured data in PostgreSQL.',
     repo: 'https://github.com/JustinEscano/ORBIT',
     depth: 'brief',
-    thumbnail: '/assets/ORBIT/ORBITLOGO.png',
+    thumbnail: '/assets/ORBIT/ORBIT_LOGO.png',
     caseStudy: {
       stack: ['Python (Django)', 'Dart (Flutter)', 'TypeScript (Next.js)', 'PostgreSQL', 'C++ (IoT scripts)'],
       gallery: [
