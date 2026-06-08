@@ -16,7 +16,7 @@ export default function CaseStudyFull({ project }: { project: Project }) {
         </div>
         <div className="flex items-center gap-6 mb-6">
           {project.thumbnail && (
-            <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0 bg-surface rounded-2xl border border-border p-2 overflow-hidden flex items-center justify-center">
+            <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0 bg-black/80 dark:bg-black/50 backdrop-blur-sm rounded-2xl border border-border dark:border-white/20 p-2 overflow-hidden flex items-center justify-center">
               <Image 
                 src={project.thumbnail} 
                 alt={`${project.title} logo`} 
