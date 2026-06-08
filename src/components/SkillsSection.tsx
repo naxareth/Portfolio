@@ -28,16 +28,20 @@ const skills = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="relative py-24 px-6 border-y border-border bg-surface/50 backdrop-blur-sm [text-shadow:none] overflow-hidden">
-      {/* Huge Background Graphic */}
-      <div 
-        className="absolute top-1/2 right-[-5%] -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03] dark:opacity-[0.05] dark:invert pointer-events-none"
-        style={{
-          backgroundImage: "url('/assets/Background/WHATIDO-BG.svg')",
-          backgroundSize: "contain",
-          backgroundPosition: "center right",
-          backgroundRepeat: "no-repeat"
-        }}
-      />
+      {/* Huge Background Graphic (Compass slowly rotating) */}
+      <div className="absolute top-1/2 right-[-5%] -translate-y-1/2 w-[800px] h-[800px] pointer-events-none">
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
+          className="w-full h-full opacity-[0.03] dark:opacity-[0.05] dark:invert"
+          style={{
+            backgroundImage: "url('/assets/Background/WHATIDO-BG.svg')",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
+          }}
+        />
+      </div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         <h2 className="text-4xl font-serif mb-16">What I Do</h2>
