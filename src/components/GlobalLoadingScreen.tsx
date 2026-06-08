@@ -2,15 +2,23 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { projects } from '@/lib/projects'
 
 export default function GlobalLoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // List of critical images to preload
-    const criticalImages = [
-      '/assets/Ace/temporary-pic.jpg'
-    ]
+    // Collect all critical images: hero image, all project thumbnails, and the first gallery image of each project
+    const projectThumbnails = projects.map(p => p.thumbnail).filter(Boolean) as string[]
+    const projectFirstGalleryImages = projects
+      .map(p => p.caseStudy?.gallery?.[0]?.src)
+      .filter(Boolean) as string[]
+
+    const criticalImages = Array.from(new Set([
+      '/assets/Ace/temporary-pic.jpg',
+      ...projectThumbnails,
+      ...projectFirstGalleryImages
+    ]))
 
     let loadedCount = 0;
 
