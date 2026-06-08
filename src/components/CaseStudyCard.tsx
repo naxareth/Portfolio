@@ -38,10 +38,9 @@ export default function CaseStudyCard({ project }: { project: Project }) {
           />
         </div>
         
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#1e1b18]/80 to-transparent z-10 pointer-events-none"></div>
-        
-        <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
-          <div className="mt-auto">
+        {/* Bottom Frosted Bar */}
+        <div className="absolute inset-x-0 bottom-0 p-6 z-20 bg-[#1e1b18]/40 backdrop-blur-md border-t border-white/10">
+          <div>
             <h3 className="text-3xl font-serif text-white drop-shadow-lg mb-2">{project.title}</h3>
             <p className="text-gray-300 font-serif max-w-sm mb-4 drop-shadow-md">{project.brief}</p>
             <div className="flex flex-wrap gap-2">
@@ -63,8 +62,16 @@ export default function CaseStudyCard({ project }: { project: Project }) {
       href={`/work/${project.slug}`}
       className="group block relative rounded-xl border border-border bg-surface overflow-hidden transition-colors hover:border-muted/50 aspect-[4/3]"
     >
-      <div className="absolute inset-0 bg-black/5 p-8 flex flex-col justify-end z-20">
-        <div className="mt-auto">
+      {/* Centered View Details Popup */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <span className="bg-[#b08d57] text-[#1e1b18] px-6 py-2 rounded-full font-mono text-sm font-semibold tracking-wide shadow-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          View Project
+        </span>
+      </div>
+
+      {/* Bottom Frosted Bar */}
+      <div className="absolute inset-x-0 bottom-0 p-6 z-20 bg-[#1e1b18]/40 backdrop-blur-md border-t border-white/10 group-hover:bg-[#1e1b18]/60 transition-colors duration-500">
+        <div>
           <div className="flex items-center gap-4 mb-4">
             {project.thumbnail && (
               <div className="relative w-12 h-12 shrink-0 bg-[#1e1b18]/50 backdrop-blur-sm rounded-xl border border-white/20 p-1 flex items-center justify-center overflow-hidden">
@@ -115,7 +122,6 @@ export default function CaseStudyCard({ project }: { project: Project }) {
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#1e1b18]/50 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500"></div>
     </Link>
   )
 }
