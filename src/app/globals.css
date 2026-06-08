@@ -12,6 +12,7 @@
   --font-serif: var(--font-dm-serif);
 
   --animate-marquee: marquee 20s linear infinite;
+  --animate-drift: drift 60s linear infinite;
 
   @keyframes marquee {
     0% {
@@ -19,6 +20,15 @@
     }
     100% {
       transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 600px 600px;
     }
   }
 }

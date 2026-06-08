@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative">
         {/* Topography Background Overlay */}
         <div 
-          className="pointer-events-none fixed inset-0 z-[-1] opacity-[0.04] dark:opacity-[0.06] dark:invert"
+          className="pointer-events-none absolute inset-0 z-[-1] opacity-[0.04] dark:opacity-[0.06] dark:invert animate-drift"
           style={{
             backgroundImage: `url("/assets/Background/topography.svg")`,
             backgroundSize: '600px',
