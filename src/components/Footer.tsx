@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="px-4 md:px-8 pb-8 mt-24">
       <div className="relative max-w-6xl mx-auto bg-surface/95 dark:bg-[#181614]/90 backdrop-blur-xl border border-border shadow-lg rounded-3xl p-8 md:p-12 overflow-hidden">
         {/* Contact SVG Background Watermark */}
-        <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[600px] h-[600px] pointer-events-none">
+        <div className="absolute top-1/2 right-8 md:right-16 -translate-y-1/2 w-[200px] h-[200px] md:w-[280px] md:h-[280px] pointer-events-none">
           <div 
             className="w-full h-full opacity-[0.03] dark:opacity-[0.05] dark:invert"
             style={{
