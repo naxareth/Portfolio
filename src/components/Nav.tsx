@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { flushSync } from 'react-dom'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
@@ -38,12 +39,14 @@ export default function Nav() {
     );
 
     const transition = document.startViewTransition(() => {
-      if (isDarkNew) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-      setIsDark(isDarkNew)
+      flushSync(() => {
+        if (isDarkNew) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+        setIsDark(isDarkNew)
+      })
     });
 
     transition.ready.then(() => {
