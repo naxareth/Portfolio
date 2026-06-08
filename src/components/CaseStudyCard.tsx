@@ -27,13 +27,13 @@ export default function CaseStudyCard({ project }: { project: Project }) {
   if (project.depth === 'placeholder') {
     return (
       <div className="group relative aspect-[4/3] rounded-xl border border-border overflow-hidden bg-black cursor-not-allowed">
-        <div className="absolute inset-0 z-0 opacity-60 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-60 overflow-hidden">
           <Image 
             src="/assets/Ace/UPCOMING-WORK.jpg" 
             alt="Upcoming Work" 
             fill 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover blur-sm group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0" 
+            className="object-cover blur-sm scale-105 grayscale" 
           />
         </div>
         
