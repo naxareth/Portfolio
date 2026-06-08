@@ -14,7 +14,7 @@ export default function CtaSection() {
       >
         <h2 className="text-4xl md:text-6xl font-serif mb-6 leading-tight">
           Let's build something <br className="hidden md:block" />
-          <span className="italic bg-gradient-to-b from-yellow-500 to-orange-600 bg-clip-text text-transparent pr-2 pb-1">structured.</span>
+          <span className="italic text-accent pr-2 pb-1">structured.</span>
         </h2>
         <p className="text-muted mb-10 max-w-lg mx-auto">
           Open for OJT opportunities and collaborations starting January.

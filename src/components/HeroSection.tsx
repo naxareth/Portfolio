@@ -35,7 +35,7 @@ export default function HeroSection() {
             className="text-[clamp(3rem,6vw,5.5rem)] leading-[1.1] font-serif mb-8"
           >
             IT Student <br />
-            <span className="italic bg-gradient-to-b from-yellow-500 to-orange-600 bg-clip-text text-transparent pr-2">& Developer</span>
+            <span className="italic text-accent pr-2">& Developer</span>
           </motion.h1>
 
           <motion.p 
@@ -44,7 +44,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-muted max-w-xl mb-12"
           >
-            I'm a 4th-year BSIT student specializing in <span className="text-orange-600 dark:text-orange-400 font-medium">System Development</span>. I believe every system worth building starts with <span className="text-amber-500 dark:text-amber-400 font-medium">structure</span>: a clear plan, a defensible architecture, and code that communicates intent.
+            I'm a 4th-year BSIT student specializing in <span className="text-accent font-medium">System Development</span>. I believe every system worth building starts with <span className="text-accent font-medium">structure</span>: a clear plan, a defensible architecture, and code that communicates intent.
           </motion.p>
 
           <motion.div 
