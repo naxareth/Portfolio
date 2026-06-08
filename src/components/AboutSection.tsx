@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import MarqueeStrip from './MarqueeStrip'
 
 export default function AboutSection() {
@@ -7,14 +10,25 @@ export default function AboutSection() {
     <>
       <MarqueeStrip items="Ace Philip Denulan +++ System Developer +++ Applied Analytics +++ BSIT Student +++ Problem Solver +++ " />
       
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          <div className="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden">
-            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill className="object-contain object-bottom" />
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden"
+          >
+            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain object-bottom" />
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-8">
               A website that leaves a <br className="hidden md:block" />
               <span className="italic text-muted">lasting impression.</span>
@@ -49,7 +63,7 @@ export default function AboutSection() {
             >
               More about me →
             </Link>
-          </div>
+          </motion.div>
 
         </div>
       </section>
