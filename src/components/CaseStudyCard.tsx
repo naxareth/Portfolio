@@ -81,7 +81,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
                 alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover blur-md group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out"
+                className="object-cover blur-sm group-hover:blur-none group-hover:scale-100 scale-105 transition-all duration-700 ease-in-out"
                 priority={currentImageIndex === 0}
               />
             </motion.div>
