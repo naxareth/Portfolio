@@ -66,10 +66,6 @@
 }
 
 /* View Transitions for Dark Mode Toggle */
-.theme-transitioning * {
-  transition: none !important;
-}
-
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
