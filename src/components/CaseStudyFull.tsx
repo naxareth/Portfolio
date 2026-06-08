@@ -16,12 +16,12 @@ export default function CaseStudyFull({ project }: { project: Project }) {
         </div>
         <div className="flex items-center gap-6 mb-6">
           {project.thumbnail && (
-            <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0 bg-[#131313] rounded-2xl border border-white/10 p-2 overflow-hidden flex items-center justify-center">
+            <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0 bg-surface rounded-2xl border border-border p-2 overflow-hidden flex items-center justify-center">
               <Image 
                 src={project.thumbnail} 
                 alt={`${project.title} logo`} 
                 fill 
-                className="object-contain p-2" 
+                className="object-contain p-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" 
               />
             </div>
           )}
