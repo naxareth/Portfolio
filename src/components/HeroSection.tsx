@@ -38,7 +38,7 @@ export default function HeroSection() {
             className="text-[clamp(3rem,6vw,5.5rem)] leading-[1.1] font-serif mb-8"
           >
             IT Student <br />
-            <span className="italic bg-gradient-to-b from-red-500 to-purple-600 bg-clip-text text-transparent">& Developer</span>
+            <span className="italic bg-gradient-to-b from-red-500 to-purple-900 bg-clip-text text-transparent pr-2">& Developer</span>
           </motion.h1>
 
           <motion.p 
