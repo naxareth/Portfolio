@@ -40,7 +40,20 @@ export default function CaseStudyCard({ project }: { project: Project }) {
     >
       <div className="absolute inset-0 bg-black/5 p-8 flex flex-col justify-end z-20">
         <div className="mt-auto">
-          <h3 className="text-3xl font-serif mb-3 text-white">{project.title}</h3>
+          <div className="flex items-center gap-4 mb-4">
+            {project.thumbnail && (
+              <div className="relative w-12 h-12 shrink-0 bg-surface rounded-xl border border-white/10 p-1 flex items-center justify-center overflow-hidden">
+                <Image 
+                  src={project.thumbnail} 
+                  alt={`${project.title} logo`} 
+                  fill 
+                  sizes="48px"
+                  className="object-contain p-1.5 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" 
+                />
+              </div>
+            )}
+            <h3 className="text-3xl font-serif text-white drop-shadow-lg">{project.title}</h3>
+          </div>
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
               <span key={tag} className="text-xs font-mono text-gray-300 border border-white/20 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm">
@@ -68,7 +81,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
                 alt={`${project.title} - ${images[currentImageIndex].alt}`} 
                 fill 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
+                className="object-cover blur-[8px] group-hover:blur-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
                 priority={currentImageIndex === 0}
               />
             </motion.div>
