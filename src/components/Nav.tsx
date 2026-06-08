@@ -38,7 +38,12 @@ export default function Nav() {
       Math.max(y, innerHeight - y)
     );
 
-    const transition = document.startViewTransition(() => {
+    // Set CSS variables for the animation
+    document.documentElement.style.setProperty('--x', `${x}px`);
+    document.documentElement.style.setProperty('--y', `${y}px`);
+    document.documentElement.style.setProperty('--radius', `${endRadius}px`);
+
+    document.startViewTransition(() => {
       flushSync(() => {
         if (isDarkNew) {
           document.documentElement.classList.add('dark')
@@ -47,24 +52,6 @@ export default function Nav() {
         }
         setIsDark(isDarkNew)
       })
-    });
-
-    transition.ready.then(() => {
-      const clipPath = [
-        `circle(0px at ${x}px ${y}px)`,
-        `circle(${endRadius}px at ${x}px ${y}px)`
-      ];
-
-      document.documentElement.animate(
-        {
-          clipPath: isDarkNew ? [...clipPath].reverse() : clipPath,
-        },
-        {
-          duration: 400,
-          easing: 'ease-in',
-          pseudoElement: isDarkNew ? '::view-transition-old(root)' : '::view-transition-new(root)',
-        }
-      );
     });
   }
 

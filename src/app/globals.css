@@ -66,22 +66,41 @@
 }
 
 /* View Transitions for Dark Mode Toggle */
+::view-transition-group(root) {
+  animation: none;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
+  display: block;
 }
 
+@keyframes clip-out {
+  from { clip-path: circle(var(--radius) at var(--x) var(--y)); }
+  to { clip-path: circle(0px at var(--x) var(--y)); }
+}
+
+@keyframes clip-in {
+  from { clip-path: circle(0px at var(--x) var(--y)); }
+  to { clip-path: circle(var(--radius) at var(--x) var(--y)); }
+}
+
+/* Light -> Dark (.dark is added, so it exists during transition) */
+.dark::view-transition-old(root) {
+  z-index: 999;
+  animation: clip-out 400ms ease-in forwards;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* Dark -> Light (.dark is removed, so it does not exist) */
 ::view-transition-old(root) {
   z-index: 1;
 }
 ::view-transition-new(root) {
   z-index: 999;
-}
-
-.dark::view-transition-old(root) {
-  z-index: 999;
-}
-.dark::view-transition-new(root) {
-  z-index: 1;
+  animation: clip-in 400ms ease-in forwards;
 }
