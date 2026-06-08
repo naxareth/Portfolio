@@ -59,22 +59,17 @@ export default function GlobalLoadingScreen() {
       {isLoading && (
         <motion.div
           initial={{ backgroundColor: "#1e1b18", color: "#f0ece6", y: 0 }}
-          animate={{ backgroundColor: "#f7f4f0", color: "#2c2825" }}
           exit={{ y: "-100%" }}
           transition={{ 
-            backgroundColor: { delay: 1.5, duration: 1.0, ease: "easeInOut" },
-            color: { delay: 1.5, duration: 1.0, ease: "easeInOut" },
             y: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
           }}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden"
         >
           {/* Subtle Plus Pattern Background (moving diagonally) */}
           <motion.div 
-            className="absolute inset-0 animate-drift pointer-events-none"
-            initial={{ opacity: 0.05, filter: "invert(1)" }}
-            animate={{ opacity: 0.03, filter: "invert(0)" }}
-            transition={{ delay: 1.5, duration: 1.0, ease: "easeInOut" }}
+            className="absolute inset-0 animate-drift pointer-events-none opacity-[0.05]"
             style={{
+              filter: "invert(1)",
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29 29v-4h2v4h4v2h-4v4h-2v-4h-4v-2h4z' fill='%23000' fill-rule='evenodd'/%3E%3C/svg%3E")`,
               backgroundSize: '60px'
             }}
@@ -82,13 +77,10 @@ export default function GlobalLoadingScreen() {
 
           {/* Top Loading Bar Extending Across Screen */}
           <motion.div
-            className="absolute top-0 left-0 h-[4px] z-20"
-            initial={{ backgroundColor: "#f0ece6", width: "0%" }}
-            animate={{ backgroundColor: "#2c2825", width: "100%" }}
-            transition={{ 
-              backgroundColor: { delay: 1.5, duration: 1.0, ease: "easeInOut" },
-              width: { duration: 3, ease: "linear" } 
-            }}
+            className="absolute top-0 left-0 h-[4px] z-20 bg-[#f0ece6]"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ width: { duration: 3, ease: "linear" } }}
           />
 
           {/* Name and Subtitle Animating */}
@@ -98,9 +90,9 @@ export default function GlobalLoadingScreen() {
             className="flex flex-col items-center justify-center z-10"
           >
             <motion.h1
-              initial={{ y: -50, opacity: 0 }}
+              initial={{ y: "-100vh", opacity: 0 }}
               animate={{ y: -10, opacity: 1 }}
-              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
               className="text-4xl font-serif tracking-widest drop-shadow-sm mb-4"
               style={{ color: "inherit" }}
             >
@@ -109,7 +101,7 @@ export default function GlobalLoadingScreen() {
             <motion.p
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.76, 0, 0.24, 1] }}
               className="text-sm font-mono tracking-wide"
               style={{ color: "#8c8279" }} // Taupe muted color works for both
             >
