@@ -8,9 +8,9 @@ import VideoIntro from './VideoIntro'
 export default function HeroSection() {
   return (
     <section className="pt-40 pb-24 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-stretch">
         
-        <div className="lg:col-span-8 flex flex-col items-start relative z-10">
+        <div className="lg:col-span-8 flex flex-col items-start justify-between relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap items-center gap-6"
+            className="flex flex-wrap items-center gap-6 mt-auto"
           >
             <Link 
               href="/work" 
@@ -72,7 +72,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="lg:col-span-4 relative flex flex-col items-center lg:items-end mt-12 lg:mt-16"
+          className="lg:col-span-4 relative flex flex-col items-center lg:items-end lg:justify-between h-full mt-12 lg:mt-0"
         >
           <div className="relative w-full max-w-sm aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden">
             <Image 
