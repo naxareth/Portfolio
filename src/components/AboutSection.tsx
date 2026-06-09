@@ -29,7 +29,7 @@ export default function AboutSection() {
             <div className="absolute -bottom-6 -left-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
             <div className="absolute -bottom-6 -right-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
 
-            <div className="relative aspect-square w-full rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden shadow-2xl group">
+            <div className="relative aspect-square w-full rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden shadow-xl group">
               <Image src="/assets/Ace/PORTRAIT-04-01.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center transition-all duration-700 group-hover:scale-105" />
             </div>
           </motion.div>

@@ -135,7 +135,7 @@ export default function ProjectSlideshow({ images, altPrefix }: { images: Projec
 
             <div className="relative w-full h-full flex flex-col items-center justify-center">
               <div 
-                className="relative w-full max-h-[85vh] aspect-video max-w-7xl rounded-xl overflow-hidden cursor-default shadow-2xl"
+                className="relative w-full max-h-[85vh] aspect-video max-w-7xl rounded-xl overflow-hidden cursor-default shadow-xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Image 

@@ -84,7 +84,7 @@ export default function HeroSection() {
             <div className="absolute -bottom-6 -left-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
             <div className="absolute -bottom-6 -right-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
 
-            <div className="relative w-full aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden shadow-2xl group">
+            <div className="relative w-full aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden shadow-xl group">
               <Image
                 src="/assets/Ace/PORTRAIT-03.jpg"
                 alt="Ace Philip Denulan"
