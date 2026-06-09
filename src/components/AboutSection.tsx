@@ -21,8 +21,13 @@ export default function AboutSection() {
             className="relative w-full max-w-md mx-auto"
           >
             {/* Structural Accents Behind Image */}
-            <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-full h-full border border-border rounded-3xl -z-10 bg-[url('/assets/Background/topography.svg')] bg-cover bg-center opacity-[0.15] dark:opacity-[0.1] dark:invert" />
-            <div className="absolute -bottom-2 -left-2 md:-bottom-3 md:-left-3 w-full h-full border border-dashed border-border/50 rounded-3xl -z-10" />
+            <div className="absolute -bottom-3 -left-3 md:-bottom-5 md:-left-5 w-full h-full border border-dashed border-border/60 rounded-3xl -z-10" />
+            
+            {/* Blueprint Corner Markers */}
+            <div className="absolute -top-6 -left-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
+            <div className="absolute -top-6 -right-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
+            <div className="absolute -bottom-6 -left-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
+            <div className="absolute -bottom-6 -right-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
 
             <div className="relative aspect-square w-full rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden shadow-2xl group">
               <Image src="/assets/Ace/PORTRAIT-04-01.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center transition-all duration-700 group-hover:scale-105" />

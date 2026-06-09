@@ -76,8 +76,13 @@ export default function HeroSection() {
         >
           <div className="relative w-full max-w-sm">
             {/* Structural Accents Behind Image */}
-            <div className="absolute top-4 -right-4 md:top-6 md:-right-6 w-full h-full border border-border rounded-3xl -z-10 bg-[url('/assets/Background/topography.svg')] bg-cover bg-center opacity-[0.15] dark:opacity-[0.1] dark:invert" />
-            <div className="absolute top-2 -right-2 md:top-3 md:-right-3 w-full h-full border border-dashed border-border/50 rounded-3xl -z-10" />
+            <div className="absolute top-3 -right-3 md:top-5 md:-right-5 w-full h-full border border-dashed border-border/60 rounded-3xl -z-10" />
+            
+            {/* Blueprint Corner Markers */}
+            <div className="absolute -top-6 -left-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
+            <div className="absolute -top-6 -right-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
+            <div className="absolute -bottom-6 -left-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
+            <div className="absolute -bottom-6 -right-6 w-4 h-4 opacity-40 dark:invert"><Image src="/assets/Background/plus.svg" alt="" fill /></div>
 
             <div className="relative w-full aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden shadow-2xl group">
               <Image
