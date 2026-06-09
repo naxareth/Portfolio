@@ -9,18 +9,18 @@ export default function AboutSection() {
   return (
     <>
       <MarqueeStrip items="Ace Philip Denulan +++ System Developer +++ Applied Analytics +++ BSIT Student +++ Problem Solver +++ " />
-      
+
       <section className="py-24 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden"
           >
-            <Image src="/assets/Ace/temporary-pic.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center grayscale sepia-[.3] hover:grayscale-0 hover:sepia-0 transition-all duration-700" />
+            <Image src="/assets/Ace/PORTRAIT-04-01.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center grayscale sepia-[.3] hover:grayscale-0 hover:sepia-0 transition-all duration-700" />
           </motion.div>
 
           <motion.div
@@ -57,8 +57,8 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="inline-block px-8 py-4 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             >
               More about me →

@@ -9,9 +9,9 @@ export default function HeroSection() {
   return (
     <section className="pt-40 pb-24 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-stretch">
-        
+
         <div className="lg:col-span-8 flex flex-col items-start justify-between relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -28,7 +28,7 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -38,7 +38,7 @@ export default function HeroSection() {
             <span className="italic text-accent pr-2">& Developer</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -47,20 +47,20 @@ export default function HeroSection() {
             I'm a 4th-year BSIT student specializing in <span className="text-accent font-medium">System Development</span>. I believe every system worth building starts with <span className="text-accent font-medium">structure</span>: a clear plan, a defensible architecture, and code that communicates intent.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap items-center gap-6 mt-auto"
           >
-            <Link 
-              href="/work" 
+            <Link
+              href="/work"
               className="px-8 py-4 bg-foreground text-background rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             >
               View My Work
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="text-sm font-medium text-muted hover:text-foreground transition-colors"
             >
               About me →
@@ -68,20 +68,20 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="lg:col-span-4 relative flex flex-col items-center lg:items-end lg:justify-between h-full mt-12 lg:mt-0"
         >
           <div className="relative w-full max-w-sm aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden">
-            <Image 
-              src="/assets/Ace/temporary-pic.jpg" 
-              alt="Ace Philip Denulan" 
-              fill 
+            <Image
+              src="/assets/Ace/PORTRAIT-03.jpg"
+              alt="Ace Philip Denulan"
+              fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover object-center grayscale sepia-[.3] hover:grayscale-0 hover:sepia-0 transition-all duration-700" 
-              priority 
+              className="object-cover object-center grayscale sepia-[.3] hover:grayscale-0 hover:sepia-0 transition-all duration-700"
+              priority
             />
           </div>
 

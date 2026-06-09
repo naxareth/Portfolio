@@ -25,7 +25,7 @@ export default function GlobalLoadingScreen() {
       .filter(Boolean) as string[]
 
     const criticalImages = Array.from(new Set([
-      '/assets/Ace/temporary-pic.jpg',
+      '/assets/Ace/PORTRAIT-03.jpg',
       ...projectThumbnails,
       ...projectFirstGalleryImages
     ]))
