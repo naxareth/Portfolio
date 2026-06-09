@@ -13,14 +13,20 @@ export default function AboutSection() {
       <section className="py-24 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden"
+            className="relative w-full max-w-md mx-auto"
           >
-            <Image src="/assets/Ace/PORTRAIT-04-01.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center transition-all duration-700" />
+            {/* Structural Accents Behind Image */}
+            <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-full h-full border border-border rounded-3xl -z-10 bg-[url('/assets/Background/topography.svg')] bg-cover bg-center opacity-[0.15] dark:opacity-[0.1] dark:invert" />
+            <div className="absolute -bottom-2 -left-2 md:-bottom-3 md:-left-3 w-full h-full border border-dashed border-border/50 rounded-3xl -z-10" />
+
+            <div className="relative aspect-square w-full rounded-3xl bg-surface border border-border flex items-end justify-center overflow-hidden shadow-2xl group">
+              <Image src="/assets/Ace/PORTRAIT-04-01.jpg" alt="Ace Philip Denulan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center transition-all duration-700 group-hover:scale-105" />
+            </div>
           </motion.div>
 
           <motion.div

@@ -74,15 +74,21 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="lg:col-span-4 relative flex flex-col items-center lg:items-end lg:justify-between h-full mt-12 lg:mt-0"
         >
-          <div className="relative w-full max-w-sm aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden">
-            <Image
-              src="/assets/Ace/PORTRAIT-03.jpg"
-              alt="Ace Philip Denulan"
-              fill
-              sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover object-center transition-all duration-700"
-              priority
-            />
+          <div className="relative w-full max-w-sm">
+            {/* Structural Accents Behind Image */}
+            <div className="absolute top-4 -right-4 md:top-6 md:-right-6 w-full h-full border border-border rounded-3xl -z-10 bg-[url('/assets/Background/topography.svg')] bg-cover bg-center opacity-[0.15] dark:opacity-[0.1] dark:invert" />
+            <div className="absolute top-2 -right-2 md:top-3 md:-right-3 w-full h-full border border-dashed border-border/50 rounded-3xl -z-10" />
+
+            <div className="relative w-full aspect-square bg-surface rounded-3xl border border-border flex items-end justify-center overflow-hidden shadow-2xl group">
+              <Image
+                src="/assets/Ace/PORTRAIT-03.jpg"
+                alt="Ace Philip Denulan"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover object-center transition-all duration-700 group-hover:scale-105"
+                priority
+              />
+            </div>
           </div>
 
           <div className="w-full flex justify-center lg:justify-end lg:pr-4 mt-4">
